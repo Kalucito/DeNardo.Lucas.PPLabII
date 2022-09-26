@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parcial1", "Parcial1", "{5A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibliotecaDeClases", "BibliotecaDeClases\BibliotecaDeClases.csproj", "{27AC21E4-9452-4B31-97FF-E83F018F99AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrmParcial", "FrmParcial\FrmParcial.csproj", "{E4B8D2BB-E171-4F9D-AE10-BE42EF5F89A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrmParcial", "FrmParcial\FrmParcial.csproj", "{E4B8D2BB-E171-4F9D-AE10-BE42EF5F89A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
