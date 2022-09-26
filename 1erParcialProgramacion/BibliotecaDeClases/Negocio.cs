@@ -23,7 +23,7 @@ namespace BibliotecaDeClases
             usuariosRegistrados.Add(new Usuario("Valentin Peralta", "peralta@peralta.com", "contraseña", Usuario.eTipoDeUsuario.Dueño));
         }
 
-        private static bool ValidarCamposIngresados(string email, string contraseña)
+        public static bool ValidarCamposIngresados(string email, string contraseña)
         {
 
             if(string.IsNullOrEmpty(email) || string.IsNullOrEmpty(contraseña))
@@ -34,7 +34,7 @@ namespace BibliotecaDeClases
             return true;
         }
 
-        private static Usuario LogearUsuario(string email, string contraseña)
+        public static Usuario LogearUsuario(string email, string contraseña)
         {
             if(ValidarCamposIngresados(email, contraseña))
             {

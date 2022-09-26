@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "BibliotecaDeClases/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BibliotecaDeClases.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BibliotecaDeClases.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BibliotecaDeClases/1.0.0": {
+      "type": "project",
+      "path": "../BibliotecaDeClases/BibliotecaDeClases.csproj",
+      "msbuildProject": "../BibliotecaDeClases/BibliotecaDeClases.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "BibliotecaDeClases >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Lucas\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Lucas\\source\\repos\\1erParcialProgramacion\\BibliotecaDeClases\\BibliotecaDeClases.csproj": {
+              "projectPath": "C:\\Users\\Lucas\\source\\repos\\1erParcialProgramacion\\BibliotecaDeClases\\BibliotecaDeClases.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
