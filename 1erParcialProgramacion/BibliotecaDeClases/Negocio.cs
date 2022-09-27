@@ -26,7 +26,7 @@ namespace BibliotecaDeClases
         public static bool ValidarCamposIngresados(string email, string contraseña)
         {
 
-            if(string.IsNullOrEmpty(email) || string.IsNullOrEmpty(contraseña))
+            if(string.IsNullOrEmpty(email.Trim()) || string.IsNullOrEmpty(contraseña)) 
             {
                 return false;
             }

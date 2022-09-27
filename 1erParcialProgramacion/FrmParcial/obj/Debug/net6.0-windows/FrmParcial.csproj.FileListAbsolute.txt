@@ -19,3 +19,4 @@ C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-w
 C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\bin\Debug\net6.0-windows\BibliotecaDeClases.dll
 C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\bin\Debug\net6.0-windows\BibliotecaDeClases.pdb
 C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-windows\FrmParcial.csproj.CopyComplete
+C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-windows\FrmParcial.FrmMenuPrincipal.resources

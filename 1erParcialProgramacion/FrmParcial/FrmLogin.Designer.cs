@@ -32,7 +32,7 @@
             this.btnAutocompletarVendedor = new System.Windows.Forms.Button();
             this.btnAutocompletarDueño = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtClave = new System.Windows.Forms.TextBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,6 +41,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
+            this.lblErrorIngreso = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,7 +56,7 @@
             this.btnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(444, 190);
+            this.btnIngresar.Location = new System.Drawing.Point(444, 193);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(106, 35);
             this.btnIngresar.TabIndex = 2;
@@ -78,6 +79,7 @@
             this.btnAutocompletarVendedor.TabIndex = 3;
             this.btnAutocompletarVendedor.Text = "Autocompletar Vendedor";
             this.btnAutocompletarVendedor.UseVisualStyleBackColor = false;
+            this.btnAutocompletarVendedor.Click += new System.EventHandler(this.btnAutocompletarVendedor_Click);
             // 
             // btnAutocompletarDueño
             // 
@@ -106,18 +108,22 @@
             this.txtEmail.Size = new System.Drawing.Size(365, 30);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.Text = "EMAIL";
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
-            // txtClave
+            // txtContraseña
             // 
-            this.txtClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtClave.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtClave.ForeColor = System.Drawing.Color.DimGray;
-            this.txtClave.Location = new System.Drawing.Point(310, 141);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(365, 30);
-            this.txtClave.TabIndex = 6;
-            this.txtClave.Text = "CONTRASEÑA";
+            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContraseña.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtContraseña.ForeColor = System.Drawing.Color.DimGray;
+            this.txtContraseña.Location = new System.Drawing.Point(310, 141);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(365, 30);
+            this.txtContraseña.TabIndex = 6;
+            this.txtContraseña.Text = "CONTRASEÑA";
+            this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
+            this.txtContraseña.Leave += new System.EventHandler(this.txtContraseña_Leave);
             // 
             // panel1
             // 
@@ -162,7 +168,7 @@
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Unispace", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblLogin.ForeColor = System.Drawing.Color.DimGray;
-            this.lblLogin.Location = new System.Drawing.Point(467, 25);
+            this.lblLogin.Location = new System.Drawing.Point(459, 32);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(95, 33);
             this.lblLogin.TabIndex = 10;
@@ -176,6 +182,9 @@
             this.pictureBox1.Size = new System.Drawing.Size(781, 28);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // btnCerrar
             // 
@@ -183,12 +192,15 @@
             this.btnCerrar.BackgroundImage = global::FrmParcial.Properties.Resources.application_exit_icon_181084;
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Location = new System.Drawing.Point(756, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(755, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 25);
             this.btnCerrar.TabIndex = 14;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnMinimizar
             // 
@@ -196,12 +208,25 @@
             this.btnMinimizar.BackgroundImage = global::FrmParcial.Properties.Resources.window_minimize_icon_181229;
             this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Location = new System.Drawing.Point(727, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
             this.btnMinimizar.TabIndex = 15;
             this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // lblErrorIngreso
+            // 
+            this.lblErrorIngreso.AutoSize = true;
+            this.lblErrorIngreso.Font = new System.Drawing.Font("Myanmar Text", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblErrorIngreso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(29)))), ((int)(((byte)(34)))));
+            this.lblErrorIngreso.Location = new System.Drawing.Point(310, 170);
+            this.lblErrorIngreso.Name = "lblErrorIngreso";
+            this.lblErrorIngreso.Size = new System.Drawing.Size(0, 20);
+            this.lblErrorIngreso.TabIndex = 16;
             // 
             // FrmLogin
             // 
@@ -209,6 +234,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.lblErrorIngreso);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.pictureBox1);
@@ -216,14 +242,14 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtClave);
+            this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnAutocompletarDueño);
             this.Controls.Add(this.btnAutocompletarVendedor);
             this.Controls.Add(this.btnIngresar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
-            this.Opacity = 0.9D;
+            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
@@ -239,7 +265,7 @@
         private Button btnAutocompletarVendedor;
         private Button btnAutocompletarDueño;
         private TextBox txtEmail;
-        private TextBox txtClave;
+        private TextBox txtContraseña;
         private Panel panel1;
         private PictureBox picLogo;
         private Panel panel2;
@@ -248,5 +274,6 @@
         private PictureBox pictureBox1;
         private Button btnCerrar;
         private Button btnMinimizar;
+        private Label lblErrorIngreso;
     }
 }

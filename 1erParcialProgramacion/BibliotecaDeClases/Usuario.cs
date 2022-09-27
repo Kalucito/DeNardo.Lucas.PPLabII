@@ -34,6 +34,11 @@ namespace BibliotecaDeClases
         {
             get { return this.contraseña; }
         }
+        public eTipoDeUsuario TipoDeUsuario
+        {
+            get { return this.tipoDeUsuario; }
+        }
+
         #endregion
 
 
