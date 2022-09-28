@@ -17,13 +17,15 @@ namespace BibliotecaDeClases
         private eTipoDeUsuario tipoDeUsuario;
         #endregion
 
-        public Usuario(string nombreCompleto, string email, string contraseña, eTipoDeUsuario tipoDeUsuario)
+        #region Constructores
+        public Usuario(string nombreCompleto, string email, string contraseña, eTipoDeUsuario tipoDeUsuario) 
         {
             this.nombreCompleto = nombreCompleto; 
             this.email = email;
             this.contraseña = contraseña;
             this.tipoDeUsuario = tipoDeUsuario;
         }
+        #endregion
 
         #region Propiedades
         public string Email
@@ -41,11 +43,12 @@ namespace BibliotecaDeClases
 
         #endregion
 
-
+        #region Enumerados
         public enum eTipoDeUsuario
         {
             Vendedor,
             Dueño
         }
+        #endregion
     }
 }

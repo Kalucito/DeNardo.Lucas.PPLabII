@@ -8,20 +8,28 @@ namespace BibliotecaDeClases
 {
     public static class Negocio
     {
-        static public List<Usuario> usuariosRegistrados;
-        
+        #region Atributos
+        static List<Usuario> usuariosRegistrados;
+        static List<Producto> listaDeProductos;
+        #endregion
+
+        #region Constructores
         static Negocio()
         {
             usuariosRegistrados = new List<Usuario>();
+            listaDeProductos = new List<Producto>();
 
             CargarUsuarios();
         }
+        #endregion
 
+        #region Metodos
         private static void CargarUsuarios()
         {
             usuariosRegistrados.Add(new Usuario("Ignacio Fadon", "fadon@vendedor.com", "contraseña", Usuario.eTipoDeUsuario.Vendedor));
             usuariosRegistrados.Add(new Usuario("Valentin Peralta", "peralta@peralta.com", "contraseña", Usuario.eTipoDeUsuario.Dueño));
         }
+
 
         public static bool ValidarCamposIngresados(string email, string contraseña)
         {
@@ -50,6 +58,8 @@ namespace BibliotecaDeClases
             return null;
 
         }
+
+        #endregion
 
 
     }

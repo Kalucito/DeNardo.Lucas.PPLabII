@@ -106,6 +106,8 @@ namespace FrmParcial
         {
             txtEmail.Text = "fadon@vendedor.com";
             txtContraseña.Text = "contraseña";
+            txtEmail.ForeColor = Color.LightGray;
+            txtContraseña.ForeColor = Color.LightGray;
             txtContraseña.UseSystemPasswordChar = true;
         }
 
