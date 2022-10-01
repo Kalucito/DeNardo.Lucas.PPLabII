@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnAutocompletarVendedor = new System.Windows.Forms.Button();
             this.btnAutocompletarDueño = new System.Windows.Forms.Button();
@@ -42,9 +43,15 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.lblErrorIngreso = new System.Windows.Forms.Label();
+            this.picInicioVendedor = new System.Windows.Forms.PictureBox();
+            this.tmrContadorTiempoVendedor = new System.Windows.Forms.Timer(this.components);
+            this.tmrContadorTiempoDueño = new System.Windows.Forms.Timer(this.components);
+            this.picInicioDueño = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInicioVendedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInicioDueño)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIngresar
@@ -96,6 +103,7 @@
             this.btnAutocompletarDueño.TabIndex = 4;
             this.btnAutocompletarDueño.Text = "Autocompletar Dueño";
             this.btnAutocompletarDueño.UseVisualStyleBackColor = false;
+            this.btnAutocompletarDueño.Click += new System.EventHandler(this.btnAutocompletarDueño_Click);
             // 
             // txtEmail
             // 
@@ -228,12 +236,44 @@
             this.lblErrorIngreso.Size = new System.Drawing.Size(0, 20);
             this.lblErrorIngreso.TabIndex = 16;
             // 
+            // picInicioVendedor
+            // 
+            this.picInicioVendedor.Image = global::FrmParcial.Properties.Resources.gifIngresoVendedor;
+            this.picInicioVendedor.Location = new System.Drawing.Point(250, 25);
+            this.picInicioVendedor.Name = "picInicioVendedor";
+            this.picInicioVendedor.Size = new System.Drawing.Size(530, 305);
+            this.picInicioVendedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picInicioVendedor.TabIndex = 17;
+            this.picInicioVendedor.TabStop = false;
+            this.picInicioVendedor.Visible = false;
+            // 
+            // tmrContadorTiempoVendedor
+            // 
+            this.tmrContadorTiempoVendedor.Tick += new System.EventHandler(this.tmrContadorTiempo_Tick);
+            // 
+            // tmrContadorTiempoDueño
+            // 
+            this.tmrContadorTiempoDueño.Tick += new System.EventHandler(this.tmrContadorTiempoDueño_Tick);
+            // 
+            // picInicioDueño
+            // 
+            this.picInicioDueño.Image = global::FrmParcial.Properties.Resources.gifIngresoDueño;
+            this.picInicioDueño.Location = new System.Drawing.Point(250, 25);
+            this.picInicioDueño.Name = "picInicioDueño";
+            this.picInicioDueño.Size = new System.Drawing.Size(530, 305);
+            this.picInicioDueño.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picInicioDueño.TabIndex = 18;
+            this.picInicioDueño.TabStop = false;
+            this.picInicioDueño.Visible = false;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.picInicioDueño);
+            this.Controls.Add(this.picInicioVendedor);
             this.Controls.Add(this.lblErrorIngreso);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
@@ -255,6 +295,8 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInicioVendedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInicioDueño)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +317,9 @@
         private Button btnCerrar;
         private Button btnMinimizar;
         private Label lblErrorIngreso;
+        private PictureBox picInicioVendedor;
+        private System.Windows.Forms.Timer tmrContadorTiempoVendedor;
+        private System.Windows.Forms.Timer tmrContadorTiempoDueño;
+        private PictureBox picInicioDueño;
     }
 }

@@ -43,5 +43,7 @@
         }
 
         #endregion
+
+        private PictureBox pictureBox1;
     }
 }

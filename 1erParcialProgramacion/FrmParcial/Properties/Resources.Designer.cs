@@ -83,6 +83,44 @@ namespace FrmParcial.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gifIngresoDueño {
+            get {
+                object obj = ResourceManager.GetObject("gifIngresoDueño", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gifIngresoVendedor {
+            get {
+                object obj = ResourceManager.GetObject("gifIngresoVendedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream SonidoChallenger {
+            get {
+                return ResourceManager.GetStream("SonidoChallenger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream SonidoHierro {
+            get {
+                return ResourceManager.GetStream("SonidoHierro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap window_minimize_icon_181229 {
             get {
                 object obj = ResourceManager.GetObject("window_minimize_icon_181229", resourceCulture);
