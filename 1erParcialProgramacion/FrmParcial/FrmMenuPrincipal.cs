@@ -59,6 +59,13 @@ namespace FrmParcial
             }
         }
 
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            FrmLogin frmMenuPrincipal = new FrmLogin();
+            frmMenuPrincipal.Show();
+            this.Hide();
+        }
+
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             m = 1;
