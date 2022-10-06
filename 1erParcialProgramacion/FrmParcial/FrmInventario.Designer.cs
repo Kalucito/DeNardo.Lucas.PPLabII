@@ -37,6 +37,11 @@
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMin = new System.Windows.Forms.TextBox();
             this.txtMax = new System.Windows.Forms.TextBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.cmbCategorias = new System.Windows.Forms.ComboBox();
+            this.btnNuevoProducto = new System.Windows.Forms.Button();
+            this.btnSumarStock = new System.Windows.Forms.Button();
+            this.btnVerDetalles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +60,7 @@
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.Size = new System.Drawing.Size(583, 277);
             this.dgvProductos.TabIndex = 0;
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
             // colTipoDeProducto
             // 
@@ -95,21 +101,69 @@
             // 
             // txtMin
             // 
-            this.txtMin.Location = new System.Drawing.Point(629, 168);
+            this.txtMin.Location = new System.Drawing.Point(641, 126);
             this.txtMin.Name = "txtMin";
             this.txtMin.Size = new System.Drawing.Size(100, 23);
             this.txtMin.TabIndex = 1;
             this.txtMin.Text = "0";
-            this.txtMin.TextChanged += new System.EventHandler(this.txtMin_TextChanged);
             // 
             // txtMax
             // 
-            this.txtMax.Location = new System.Drawing.Point(629, 213);
+            this.txtMax.Location = new System.Drawing.Point(641, 155);
             this.txtMax.Name = "txtMax";
             this.txtMax.Size = new System.Drawing.Size(100, 23);
             this.txtMax.TabIndex = 2;
             this.txtMax.Text = "500000";
-            this.txtMax.TextChanged += new System.EventHandler(this.txtMax_TextChanged);
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(652, 184);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.TabIndex = 3;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // cmbCategorias
+            // 
+            this.cmbCategorias.FormattingEnabled = true;
+            this.cmbCategorias.Items.AddRange(new object[] {
+            "Categorias",
+            "Gamer",
+            "Escritorio"});
+            this.cmbCategorias.Location = new System.Drawing.Point(629, 97);
+            this.cmbCategorias.Name = "cmbCategorias";
+            this.cmbCategorias.Size = new System.Drawing.Size(121, 23);
+            this.cmbCategorias.TabIndex = 4;
+            this.cmbCategorias.SelectedValueChanged += new System.EventHandler(this.cmbCategorias_SelectedValueChanged);
+            // 
+            // btnNuevoProducto
+            // 
+            this.btnNuevoProducto.Location = new System.Drawing.Point(652, 213);
+            this.btnNuevoProducto.Name = "btnNuevoProducto";
+            this.btnNuevoProducto.Size = new System.Drawing.Size(75, 53);
+            this.btnNuevoProducto.TabIndex = 5;
+            this.btnNuevoProducto.Text = "Nuevo Producto";
+            this.btnNuevoProducto.UseVisualStyleBackColor = true;
+            // 
+            // btnSumarStock
+            // 
+            this.btnSumarStock.Location = new System.Drawing.Point(661, 285);
+            this.btnSumarStock.Name = "btnSumarStock";
+            this.btnSumarStock.Size = new System.Drawing.Size(61, 39);
+            this.btnSumarStock.TabIndex = 6;
+            this.btnSumarStock.Text = "Agregar Stock";
+            this.btnSumarStock.UseVisualStyleBackColor = true;
+            // 
+            // btnVerDetalles
+            // 
+            this.btnVerDetalles.Location = new System.Drawing.Point(640, 39);
+            this.btnVerDetalles.Name = "btnVerDetalles";
+            this.btnVerDetalles.Size = new System.Drawing.Size(82, 24);
+            this.btnVerDetalles.TabIndex = 7;
+            this.btnVerDetalles.Text = "Ver Detalles";
+            this.btnVerDetalles.UseVisualStyleBackColor = true;
             // 
             // FrmInventario
             // 
@@ -117,6 +171,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(3)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(781, 350);
+            this.Controls.Add(this.btnVerDetalles);
+            this.Controls.Add(this.btnSumarStock);
+            this.Controls.Add(this.btnNuevoProducto);
+            this.Controls.Add(this.cmbCategorias);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtMax);
             this.Controls.Add(this.txtMin);
             this.Controls.Add(this.dgvProductos);
@@ -142,5 +201,10 @@
         private DataGridViewTextBoxColumn colStock;
         private TextBox txtMin;
         private TextBox txtMax;
+        private Button btnFiltrar;
+        private ComboBox cmbCategorias;
+        private Button btnNuevoProducto;
+        private Button btnSumarStock;
+        private Button btnVerDetalles;
     }
 }

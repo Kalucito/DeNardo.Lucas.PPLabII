@@ -87,6 +87,24 @@ namespace BibliotecaDeClases
             return lista;
         }
 
+        public static List<Producto> BuscarPorCategoria(string categoria)
+        {
+            List<Producto> lista = new List<Producto>();
+
+            foreach (Producto item in listaDeProductos)
+            {
+                if (item.Categoria == categoria || categoria == "Categorias")
+                {
+                    lista.Add(item);
+                }
+            }
+
+            return lista;
+        }
+
+
+
+
         #endregion
 
 

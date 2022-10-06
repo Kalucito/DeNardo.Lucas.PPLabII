@@ -13,6 +13,8 @@ namespace FrmParcial
 {
     public partial class FrmInventario : Form
     {
+        int n; //Cell selected.
+
         public FrmInventario()
         {
             InitializeComponent();
@@ -40,9 +42,34 @@ namespace FrmParcial
         private void FrmInventario_Load(object sender, EventArgs e)
         {
             CargarDataGridView(Negocio.RetornarProductos());
+            cmbCategorias.SelectedIndex = 0;
         }
 
-        private void VerificarMinMaxYBuscarPorPrecio(string min, string max)
+        //private void VerificarMinMaxYBuscarPorPrecio(string min, string max)
+        //{
+        //    double auxMin;
+        //    double auxMax;
+
+        //    if (double.TryParse(txtMin.Text, out auxMin) && double.TryParse(txtMax.Text, out auxMax))
+        //    {
+        //        List<Producto> listaDeProductos = Negocio.BuscarPorPrecio(auxMin, auxMax);
+        //        dgvProductos.Rows.Clear();
+        //        CargarDataGridView(listaDeProductos);
+        //    }
+
+        //}
+
+        //private void txtMin_TextChanged(object sender, EventArgs e)
+        //{
+        //    VerificarMinMaxYBuscarPorPrecio(txtMin.Text, txtMax.Text);
+        //}
+
+        //private void txtMax_TextChanged(object sender, EventArgs e)
+        //{
+        //    VerificarMinMaxYBuscarPorPrecio(txtMin.Text, txtMax.Text);
+        //}
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
         {
             double auxMin;
             double auxMax;
@@ -53,17 +80,18 @@ namespace FrmParcial
                 dgvProductos.Rows.Clear();
                 CargarDataGridView(listaDeProductos);
             }
-
         }
 
-        private void txtMin_TextChanged(object sender, EventArgs e)
+        private void cmbCategorias_SelectedValueChanged(object sender, EventArgs e)
         {
-            VerificarMinMaxYBuscarPorPrecio(txtMin.Text, txtMax.Text);
+            dgvProductos.Rows.Clear();
+            CargarDataGridView(Negocio.BuscarPorCategoria(cmbCategorias.Text));
         }
 
-        private void txtMax_TextChanged(object sender, EventArgs e)
+        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            VerificarMinMaxYBuscarPorPrecio(txtMin.Text, txtMax.Text);
+            int n = e.RowIndex;
+
         }
     }
 }
