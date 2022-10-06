@@ -26,6 +26,7 @@ namespace FrmParcial
 
 
 
+
         public void CargarDataGridView(List<Producto> listaDeProductos)
         {
             foreach (Producto producto in listaDeProductos)
@@ -142,6 +143,13 @@ namespace FrmParcial
         {
             m = 0;
 
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal();
+            this.Hide();
+            frmMenuPrincipal.Show();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

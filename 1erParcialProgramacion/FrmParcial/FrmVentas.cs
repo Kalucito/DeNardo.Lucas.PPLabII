@@ -110,6 +110,13 @@ namespace FrmParcial
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(usuario);
+            this.Hide();
+            frmMenuPrincipal.Show();
+        }
+
         private void btnVender_Click(object sender, EventArgs e)
         {
             DialogResult confirmarVenta;

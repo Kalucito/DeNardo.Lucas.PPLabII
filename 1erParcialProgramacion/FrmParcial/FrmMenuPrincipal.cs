@@ -17,11 +17,15 @@ namespace FrmParcial
         public int m, mx, my; //Variables para mover la ventana sin bordes.
 
         Usuario usuario;
-        public FrmMenuPrincipal(Usuario usuario)
+        public FrmMenuPrincipal()
         {
             InitializeComponent();
+        }
+        public FrmMenuPrincipal(Usuario usuario):this()
+        {
             this.usuario = usuario;
         }
+
 
         private void btnInventario_Click(object sender, EventArgs e)
         {

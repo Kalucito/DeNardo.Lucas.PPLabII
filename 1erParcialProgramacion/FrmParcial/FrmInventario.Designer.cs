@@ -49,8 +49,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.picChallenger = new System.Windows.Forms.PictureBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picChallenger)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProductos
@@ -259,12 +262,35 @@
             this.label3.TabIndex = 27;
             this.label3.Text = "Minimo";
             // 
+            // picChallenger
+            // 
+            this.picChallenger.Image = global::FrmParcial.Properties.Resources._908f95127caf7f739877f9f555807361;
+            this.picChallenger.Location = new System.Drawing.Point(661, 247);
+            this.picChallenger.Name = "picChallenger";
+            this.picChallenger.Size = new System.Drawing.Size(89, 91);
+            this.picChallenger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picChallenger.TabIndex = 28;
+            this.picChallenger.TabStop = false;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.Transparent;
+            this.btnVolver.Location = new System.Drawing.Point(0, 3);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.TabIndex = 29;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(3)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(781, 350);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.picChallenger);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -287,6 +313,7 @@
             this.Load += new System.EventHandler(this.FrmInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picChallenger)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,5 +342,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private PictureBox picChallenger;
+        private Button btnVolver;
     }
 }
