@@ -24,5 +24,18 @@ namespace BibliotecaDeClases
         }
         #endregion
 
+        public override string MostrarDetallesDeProducto()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.MostrarDetallesDeProducto());
+            sb.AppendLine($"Cantidad de memoria: {this.cantidadDeMemoria}GB");
+            sb.AppendLine($"Tecnología: {this.tecnologia}");
+            sb.AppendLine($"Velocidad: {this.velocidad}Mhz");
+
+            return sb.ToString();
+        }
+
+
     }
 }

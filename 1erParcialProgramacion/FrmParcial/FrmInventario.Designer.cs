@@ -38,11 +38,19 @@
             this.txtMin = new System.Windows.Forms.TextBox();
             this.txtMax = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.cmbCategorias = new System.Windows.Forms.ComboBox();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
-            this.btnSumarStock = new System.Windows.Forms.Button();
+            this.btnAgregarStock = new System.Windows.Forms.Button();
             this.btnVerDetalles = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.txtCategorias = new System.Windows.Forms.TextBox();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProductos
@@ -55,10 +63,10 @@
             this.colPrecio,
             this.colCategoria,
             this.colStock});
-            this.dgvProductos.Location = new System.Drawing.Point(12, 61);
+            this.dgvProductos.Location = new System.Drawing.Point(9, 42);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.Size = new System.Drawing.Size(583, 277);
+            this.dgvProductos.Size = new System.Drawing.Size(583, 202);
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
@@ -101,7 +109,7 @@
             // 
             // txtMin
             // 
-            this.txtMin.Location = new System.Drawing.Point(641, 126);
+            this.txtMin.Location = new System.Drawing.Point(679, 123);
             this.txtMin.Name = "txtMin";
             this.txtMin.Size = new System.Drawing.Size(100, 23);
             this.txtMin.TabIndex = 1;
@@ -109,7 +117,7 @@
             // 
             // txtMax
             // 
-            this.txtMax.Location = new System.Drawing.Point(641, 155);
+            this.txtMax.Location = new System.Drawing.Point(679, 152);
             this.txtMax.Name = "txtMax";
             this.txtMax.Size = new System.Drawing.Size(100, 23);
             this.txtMax.TabIndex = 2;
@@ -117,53 +125,139 @@
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(652, 184);
+            this.btnFiltrar.Location = new System.Drawing.Point(636, 191);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.Size = new System.Drawing.Size(114, 39);
             this.btnFiltrar.TabIndex = 3;
-            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.Text = "FiltrarPor Precio";
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // cmbCategorias
-            // 
-            this.cmbCategorias.FormattingEnabled = true;
-            this.cmbCategorias.Items.AddRange(new object[] {
-            "Categorias",
-            "Gamer",
-            "Escritorio"});
-            this.cmbCategorias.Location = new System.Drawing.Point(629, 97);
-            this.cmbCategorias.Name = "cmbCategorias";
-            this.cmbCategorias.Size = new System.Drawing.Size(121, 23);
-            this.cmbCategorias.TabIndex = 4;
-            this.cmbCategorias.SelectedValueChanged += new System.EventHandler(this.cmbCategorias_SelectedValueChanged);
-            // 
             // btnNuevoProducto
             // 
-            this.btnNuevoProducto.Location = new System.Drawing.Point(652, 213);
+            this.btnNuevoProducto.Location = new System.Drawing.Point(12, 261);
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Size = new System.Drawing.Size(75, 53);
             this.btnNuevoProducto.TabIndex = 5;
             this.btnNuevoProducto.Text = "Nuevo Producto";
             this.btnNuevoProducto.UseVisualStyleBackColor = true;
+            this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
             // 
-            // btnSumarStock
+            // btnAgregarStock
             // 
-            this.btnSumarStock.Location = new System.Drawing.Point(661, 285);
-            this.btnSumarStock.Name = "btnSumarStock";
-            this.btnSumarStock.Size = new System.Drawing.Size(61, 39);
-            this.btnSumarStock.TabIndex = 6;
-            this.btnSumarStock.Text = "Agregar Stock";
-            this.btnSumarStock.UseVisualStyleBackColor = true;
+            this.btnAgregarStock.Location = new System.Drawing.Point(104, 260);
+            this.btnAgregarStock.Name = "btnAgregarStock";
+            this.btnAgregarStock.Size = new System.Drawing.Size(75, 53);
+            this.btnAgregarStock.TabIndex = 6;
+            this.btnAgregarStock.Text = "Agregar Stock";
+            this.btnAgregarStock.UseVisualStyleBackColor = true;
+            this.btnAgregarStock.Click += new System.EventHandler(this.btnAgregarStock_Click);
             // 
             // btnVerDetalles
             // 
-            this.btnVerDetalles.Location = new System.Drawing.Point(640, 39);
+            this.btnVerDetalles.Location = new System.Drawing.Point(198, 272);
             this.btnVerDetalles.Name = "btnVerDetalles";
-            this.btnVerDetalles.Size = new System.Drawing.Size(82, 24);
+            this.btnVerDetalles.Size = new System.Drawing.Size(82, 26);
             this.btnVerDetalles.TabIndex = 7;
             this.btnVerDetalles.Text = "Ver Detalles";
             this.btnVerDetalles.UseVisualStyleBackColor = true;
+            this.btnVerDetalles.Click += new System.EventHandler(this.btnVerDetalles_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(296, 273);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(82, 26);
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // txtCategorias
+            // 
+            this.txtCategorias.Location = new System.Drawing.Point(630, 74);
+            this.txtCategorias.Name = "txtCategorias";
+            this.txtCategorias.Size = new System.Drawing.Size(100, 23);
+            this.txtCategorias.TabIndex = 9;
+            this.txtCategorias.TextChanged += new System.EventHandler(this.txtCategorias_TextChanged);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btnMinimizar.BackgroundImage = global::FrmParcial.Properties.Resources.window_minimize_icon_181229;
+            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Location = new System.Drawing.Point(725, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.btnMinimizar.TabIndex = 24;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btnCerrar.BackgroundImage = global::FrmParcial.Properties.Resources.application_exit_icon_181084;
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Location = new System.Drawing.Point(756, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.TabIndex = 23;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(781, 28);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label1.Location = new System.Drawing.Point(614, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 20);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Buscar Por Categoria";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label2.Location = new System.Drawing.Point(610, 155);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Maximo";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label3.Location = new System.Drawing.Point(610, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 20);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Minimo";
             // 
             // FrmInventario
             // 
@@ -171,10 +265,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(3)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(781, 350);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnMinimizar);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtCategorias);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnVerDetalles);
-            this.Controls.Add(this.btnSumarStock);
+            this.Controls.Add(this.btnAgregarStock);
             this.Controls.Add(this.btnNuevoProducto);
-            this.Controls.Add(this.cmbCategorias);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtMax);
             this.Controls.Add(this.txtMin);
@@ -185,6 +286,7 @@
             this.Text = "FrmInventario";
             this.Load += new System.EventHandler(this.FrmInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,9 +304,16 @@
         private TextBox txtMin;
         private TextBox txtMax;
         private Button btnFiltrar;
-        private ComboBox cmbCategorias;
         private Button btnNuevoProducto;
-        private Button btnSumarStock;
+        private Button btnAgregarStock;
         private Button btnVerDetalles;
+        private Button btnEditar;
+        private TextBox txtCategorias;
+        private Button btnMinimizar;
+        private Button btnCerrar;
+        private PictureBox pictureBox1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

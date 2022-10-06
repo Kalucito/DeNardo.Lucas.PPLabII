@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mime;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,6 +41,11 @@ namespace BibliotecaDeClases
         {
             get { return this.tipoDeUsuario; }
         }
+        public string NombreCompleto
+        {
+            get { return this.nombreCompleto; }
+        }
+
 
         #endregion
 

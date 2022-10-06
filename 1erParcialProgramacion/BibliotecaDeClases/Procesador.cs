@@ -7,7 +7,7 @@ using static BibliotecaDeClases.Producto;
 
 namespace BibliotecaDeClases
 {
-    internal class Procesador : Producto
+    public class Procesador : Producto
     {
         #region Atributos
         private int nucleos;
@@ -23,5 +23,17 @@ namespace BibliotecaDeClases
             this.socket = socket;
         }
         #endregion
+
+        public override string MostrarDetallesDeProducto()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.MostrarDetallesDeProducto());
+            sb.AppendLine($"Cantidad de nucleos: {this.nucleos}");
+            sb.AppendLine($"Frecuencia: {this.frecuencia}");
+            sb.AppendLine($"Socket: {this.socket}");
+
+            return sb.ToString();
+        }
     }
 }

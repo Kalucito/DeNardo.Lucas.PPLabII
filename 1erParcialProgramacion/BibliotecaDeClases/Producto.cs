@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -32,6 +33,7 @@ namespace BibliotecaDeClases
 
         #endregion
 
+        #region Propiedades
         public string TipoDeProducto
         {
             get { return this.tipoDeProducto;}
@@ -47,17 +49,33 @@ namespace BibliotecaDeClases
         public double Precio
         {
             get { return this.precio;}
+            set { this.precio = value; }
         }
         public string Categoria
         {
             get { return this.categoria;}
+            set { this.categoria = value; }
         }
         public int Stock
         {
             get { return this.stock;}
+            set { this.stock = value; }
         }
 
+        #endregion
 
+        public virtual string MostrarDetallesDeProducto()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Tipo de producto: {this.tipoDeProducto}");
+            sb.AppendLine($"Marca de producto: {marcaProducto}");
+            sb.AppendLine($"Modelo: {this.modelo}");
+            sb.AppendLine($"Precio: ${this.precio}");
+            sb.AppendLine($"Categoria: {this.categoria}");
+            sb.AppendLine($"Stock: {this.stock}");
+
+            return sb.ToString();
+        }
 
         #region Enumerados
         public enum eColores
@@ -75,6 +93,25 @@ namespace BibliotecaDeClases
         }
         #endregion
 
+        public static Producto operator+(Producto p1, int cantidadASumar)
+        {
+            p1.Stock = p1.Stock + cantidadASumar;
+
+            return p1;
+        }
+        public static Producto operator++(Producto p1)
+        {
+            p1.Stock++;
+
+            return p1;
+        }
+
+        public static Producto operator --(Producto p1)
+        {
+            p1.Stock--;
+
+            return p1;
+        }
 
     }
 }

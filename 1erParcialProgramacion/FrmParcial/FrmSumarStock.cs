@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaDeClases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +13,32 @@ namespace FrmParcial
 {
     public partial class FrmSumarStock : Form
     {
-        public FrmSumarStock()
+        private Producto producto;
+        private int cantidadAAgregar;
+
+        public FrmSumarStock(Producto producto)
         {
             InitializeComponent();
+            this.producto = producto;
         }
 
         private void txtCantidadAAgregar_TextChanged(object sender, EventArgs e)
         {
-            int auxCantidadAAgregar = 0;
-
-            if(int.TryParse(txtCantidadAAgregar.Text, out auxCantidadAAgregar))
+            if(txtCantidadAAgregar.Text.Length != 0 && int.TryParse(txtCantidadAAgregar.Text, out this.cantidadAAgregar) == false)
             {
-
+                txtCantidadAAgregar.Text = txtCantidadAAgregar.Text.Remove(txtCantidadAAgregar.Text.Length - 1);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            producto += cantidadAAgregar;
+            this.Close();
         }
     }
 }

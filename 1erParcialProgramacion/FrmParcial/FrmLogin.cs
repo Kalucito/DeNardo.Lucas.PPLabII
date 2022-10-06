@@ -11,6 +11,7 @@ namespace FrmParcial
         public int contadorDeTiempo = 0; //Variable para mostrar gif de inicio de sesión.
         public int duracionGif;
         SoundPlayer reproductorSonido = new SoundPlayer();
+        Usuario aux;
 
         public FrmLogin()
         {
@@ -19,7 +20,6 @@ namespace FrmParcial
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Usuario aux;
 
             if (Negocio.ValidarCamposIngresados(txtEmail.Text, txtContraseña.Text)) 
             {
@@ -31,7 +31,7 @@ namespace FrmParcial
                     {
                         if (chkAnimaciones.Checked)
                         {
-                            FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal();//desactivar == false
+                            FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(aux);//desactivar == false
                             this.Hide();
                             menuPrincipal.Show();
                         }
@@ -49,6 +49,8 @@ namespace FrmParcial
                         if (chkAnimaciones.Checked)
                         {
                             this.Hide();
+                            FrmVentas frmVentas = new FrmVentas(aux);
+                            frmVentas.Show();
                         }
                         else
                         {
@@ -84,7 +86,7 @@ namespace FrmParcial
             if (contadorDeTiempo == duracionGif && duracionGif == 84)
             {
                 tmrContadorTiempo.Stop();
-                FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal();
+                FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(aux);
                 this.Hide();
                 menuPrincipal.Show();
                 picInicioDueño.Visible = false;

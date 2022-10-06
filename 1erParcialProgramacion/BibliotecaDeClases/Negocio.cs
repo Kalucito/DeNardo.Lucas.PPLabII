@@ -15,6 +15,7 @@ namespace BibliotecaDeClases
         #region Atributos
         private static List<Usuario> usuariosRegistrados;
         private static List<Producto> listaDeProductos;
+        private static Queue<Cliente> colaClientes = new Queue<Cliente>();
         #endregion
 
         #region Constructores
@@ -22,9 +23,11 @@ namespace BibliotecaDeClases
         {
             usuariosRegistrados = new List<Usuario>();
             listaDeProductos = new List<Producto>();
+            colaClientes = new Queue<Cliente>();
 
             CargarUsuarios();
             CargarProductos();
+            CargarClientes();
         }
         #endregion
 
@@ -41,6 +44,15 @@ namespace BibliotecaDeClases
             listaDeProductos.Add(new MemoriaRam("Memoria Ram", "Corsair","ValueSelect" , 18100, "Gamer", 1, 16, "DDR4", 2400));
             listaDeProductos.Add(new PlacaDeVideo("Placa De Video", "Asus", "GeForce GTX 1630", 95000, "Escritorio", 3, "GTX 1630", 4, 75));
         }
+
+        private static void CargarClientes()
+        {
+            colaClientes.Enqueue(new Cliente("Lautaro Martinez", 85000, Cliente.eMetodoPago.MercadoPago));
+            colaClientes.Enqueue(new Cliente("Daniela Perez", 160000, Cliente.eMetodoPago.Efectivo));
+            colaClientes.Enqueue(new Cliente("Juan Basquez", 35000, Cliente.eMetodoPago.TarjetaDeCredito));
+            colaClientes.Enqueue(new Cliente("Ludmila Fernandez", 85000, Cliente.eMetodoPago.TarjetaDeCredito));
+        }
+
         public static bool ValidarCamposIngresados(string email, string contraseña)
         {
             if(string.IsNullOrEmpty(email.Trim()) || string.IsNullOrEmpty(contraseña))
@@ -72,6 +84,13 @@ namespace BibliotecaDeClases
             return listaDeProductos;
         }
 
+        public static Queue<Cliente> RetornarClientes()
+        {
+            return colaClientes;
+        }
+
+
+
         public static List<Producto> BuscarPorPrecio(double precioMinimo, double precioMaximo)
         {
             List<Producto> lista = new List<Producto>();
@@ -93,7 +112,7 @@ namespace BibliotecaDeClases
 
             foreach (Producto item in listaDeProductos)
             {
-                if (item.Categoria == categoria || categoria == "Categorias")
+                if (item.Categoria.ToLower().Trim().Contains(categoria.ToLower().Trim()) || categoria == "")
                 {
                     lista.Add(item);
                 }

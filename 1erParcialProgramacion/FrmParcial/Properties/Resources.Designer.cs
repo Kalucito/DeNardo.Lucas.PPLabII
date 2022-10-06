@@ -73,6 +73,16 @@ namespace FrmParcial.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _908f95127caf7f739877f9f555807361 {
+            get {
+                object obj = ResourceManager.GetObject("908f95127caf7f739877f9f555807361", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap application_exit_icon_181084 {
             get {
                 object obj = ResourceManager.GetObject("application_exit_icon_181084", resourceCulture);
@@ -96,6 +106,16 @@ namespace FrmParcial.Properties {
         internal static System.Drawing.Bitmap gifIngresoVendedor {
             get {
                 object obj = ResourceManager.GetObject("gifIngresoVendedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hierro {
+            get {
+                object obj = ResourceManager.GetObject("hierro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

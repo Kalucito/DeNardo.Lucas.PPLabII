@@ -22,6 +22,18 @@ namespace BibliotecaDeClases
             this.procesador = procesador;
         }
         #endregion
-        
+
+        public override string MostrarDetallesDeProducto()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.MostrarDetallesDeProducto());
+            sb.AppendLine($"Memoria Ram: {this.memoriaRam}Gb");
+            sb.AppendLine($"Almacenamiento: {this.almacenamiento}Gb");
+            sb.AppendLine($"Procesador: {this.procesador}");
+
+            return sb.ToString();
+        }
+
     }
 }

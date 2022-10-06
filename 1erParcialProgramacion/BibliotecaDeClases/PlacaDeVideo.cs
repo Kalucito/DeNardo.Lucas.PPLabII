@@ -21,7 +21,19 @@ namespace BibliotecaDeClases
             this.capacidadDeMemorioa = capacidadDeMemoria;
             this.consumoDeEnergia = consumoDeEnergia;
         }
-        #endregion 
+        #endregion
+
+        public override string MostrarDetallesDeProducto()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.MostrarDetallesDeProducto());
+            sb.AppendLine($"Chipset: {this.chipset}");
+            sb.AppendLine($"Capacidad de Memoria: {this.capacidadDeMemorioa}");
+            sb.AppendLine($"Consumo de Energía: {this.consumoDeEnergia}");
+
+            return sb.ToString();
+        }
 
     }
 }
