@@ -17,11 +17,13 @@ namespace FrmParcial
         public int m, mx, my; //Variables para mover la ventana sin bordes.
         List<Producto> listaDeProductos;
         Producto productoSeleccioando;
+        Usuario usuario;
 
-        public FrmInventario()
+        public FrmInventario(Usuario usuario)
         {
             InitializeComponent();
             this.listaDeProductos = Negocio.RetornarProductos();
+            this.usuario = usuario;
         }
 
 
@@ -147,7 +149,7 @@ namespace FrmParcial
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal();
+            FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(usuario);
             this.Hide();
             frmMenuPrincipal.Show();
         }

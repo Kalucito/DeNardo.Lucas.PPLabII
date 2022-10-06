@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +17,8 @@ namespace BibliotecaDeClases
         #region Atributos
         private static List<Usuario> usuariosRegistrados;
         private static List<Producto> listaDeProductos;
-        private static Queue<Cliente> colaClientes = new Queue<Cliente>();
+        private static Queue<Cliente> colaClientes;
+        private static List<Venta> listaVentas;
         #endregion
 
         #region Constructores
@@ -24,6 +27,7 @@ namespace BibliotecaDeClases
             usuariosRegistrados = new List<Usuario>();
             listaDeProductos = new List<Producto>();
             colaClientes = new Queue<Cliente>();
+            listaVentas = new List<Venta>();
 
             CargarUsuarios();
             CargarProductos();
@@ -36,6 +40,7 @@ namespace BibliotecaDeClases
         {
             usuariosRegistrados.Add(new Usuario("Ignacio Fadon", "fadon@vendedor.com", "contraseña", Usuario.eTipoDeUsuario.Vendedor));
             usuariosRegistrados.Add(new Usuario("Valentin Peralta", "peralta@peralta.com", "contraseña", Usuario.eTipoDeUsuario.Dueño));
+            usuariosRegistrados.Add(new Usuario("José Martinez de Hoz", "contador@contador.com","contraseña", Usuario.eTipoDeUsuario.Contador));
         }
         private static void CargarProductos()
         {
@@ -51,6 +56,11 @@ namespace BibliotecaDeClases
             colaClientes.Enqueue(new Cliente("Daniela Perez", 160000, Cliente.eMetodoPago.Efectivo));
             colaClientes.Enqueue(new Cliente("Juan Basquez", 35000, Cliente.eMetodoPago.TarjetaDeCredito));
             colaClientes.Enqueue(new Cliente("Ludmila Fernandez", 85000, Cliente.eMetodoPago.TarjetaDeCredito));
+        }
+
+        public static void CargarVenta(Venta venta)
+        {
+            listaVentas.Add(venta);
         }
 
         public static bool ValidarCamposIngresados(string email, string contraseña)
@@ -121,7 +131,74 @@ namespace BibliotecaDeClases
             return lista;
         }
 
+        public static int RetornarCantidadVentas()
+        {
+            int ret = 0;
 
+            foreach(Venta item in listaVentas)
+            {
+                ret++;
+            }
+            return ret;
+        }
+
+        public static List<String> DevuelveCategorias()
+        {
+            List<String> categorias = new List<String>();
+
+            foreach(Venta item in listaVentas)
+            {
+                if(categorias.Contains(item.ProductoVendido.Categoria) == false)
+                {
+                    categorias.Add(item.ProductoVendido.Categoria);
+                }
+            }
+            return categorias;
+        }
+
+
+
+        public static int ContadorCategoriasVendidas(string categoria)
+        {
+            int retorno = 0;
+
+            foreach(Venta item in listaVentas)
+            {
+                if(item.ProductoVendido.Categoria == categoria)
+                {
+                    retorno++;
+                }
+            }
+
+            return retorno;
+        }
+
+        public static double GananciaTotal()
+        {
+            double retorno = 0;
+
+            foreach(Venta item in listaVentas)
+            {
+                retorno += item.ProductoVendido.Precio;
+            }
+
+            return retorno;
+        }
+
+        public static double GananciaPorTag(string categoria)
+        {
+            double retorno = 0;
+
+            foreach(Venta item in listaVentas)
+            {
+                 if(item.ProductoVendido.Categoria == categoria)
+                 {
+                    retorno += item.ProductoVendido.Precio;
+                 }
+            }
+
+            return retorno;
+        }
 
 
         #endregion

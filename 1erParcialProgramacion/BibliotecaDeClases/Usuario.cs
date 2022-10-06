@@ -53,7 +53,8 @@ namespace BibliotecaDeClases
         public enum eTipoDeUsuario
         {
             Vendedor,
-            Dueño
+            Dueño,
+            Contador
         }
         #endregion
     }

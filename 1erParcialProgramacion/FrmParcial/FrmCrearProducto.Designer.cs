@@ -47,6 +47,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtVideoEnergia = new System.Windows.Forms.TextBox();
             this.txtVideoChipset = new System.Windows.Forms.TextBox();
+            this.txtVideoMemoria = new System.Windows.Forms.TextBox();
             this.grpNotebook = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.txtNotebookProcesador = new System.Windows.Forms.TextBox();
             this.txtNotebookAlmacenamiento = new System.Windows.Forms.TextBox();
             this.txtNotebookRam = new System.Windows.Forms.TextBox();
-            this.txtVideoMemoria = new System.Windows.Forms.TextBox();
             this.txtProcesadorSocket = new System.Windows.Forms.TextBox();
             this.txtProcesadorNucleos = new System.Windows.Forms.TextBox();
             this.txtProcesadorFrecuencia = new System.Windows.Forms.TextBox();
@@ -86,7 +86,6 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(125, 23);
             this.txtPrecio.TabIndex = 0;
-            this.txtPrecio.Text = "txtPrecio";
             // 
             // txtStock
             // 
@@ -94,7 +93,6 @@
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(125, 23);
             this.txtStock.TabIndex = 1;
-            this.txtStock.Text = "txtStock";
             // 
             // txtModelo
             // 
@@ -102,7 +100,6 @@
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(125, 23);
             this.txtModelo.TabIndex = 3;
-            this.txtModelo.Text = "txtModelo";
             // 
             // txtCategoria
             // 
@@ -110,7 +107,6 @@
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(125, 23);
             this.txtCategoria.TabIndex = 7;
-            this.txtCategoria.Text = "txtCategoria";
             // 
             // txtMarca
             // 
@@ -118,7 +114,6 @@
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(125, 23);
             this.txtMarca.TabIndex = 6;
-            this.txtMarca.Text = "txtMarca";
             // 
             // cmbTipoDeProducto
             // 
@@ -143,7 +138,7 @@
             this.grpMemoriaRam.Controls.Add(this.txtRamMemoria);
             this.grpMemoriaRam.Controls.Add(this.txtRamVelocidad);
             this.grpMemoriaRam.Controls.Add(this.txtRamTecnologia);
-            this.grpMemoriaRam.Location = new System.Drawing.Point(0, 4);
+            this.grpMemoriaRam.Location = new System.Drawing.Point(563, 63);
             this.grpMemoriaRam.Name = "grpMemoriaRam";
             this.grpMemoriaRam.Size = new System.Drawing.Size(252, 129);
             this.grpMemoriaRam.TabIndex = 9;
@@ -209,9 +204,8 @@
             this.grpVideo.Controls.Add(this.label15);
             this.grpVideo.Controls.Add(this.txtVideoEnergia);
             this.grpVideo.Controls.Add(this.txtVideoChipset);
-            this.grpVideo.Controls.Add(this.grpNotebook);
             this.grpVideo.Controls.Add(this.txtVideoMemoria);
-            this.grpVideo.Location = new System.Drawing.Point(297, 59);
+            this.grpVideo.Location = new System.Drawing.Point(297, 214);
             this.grpVideo.Name = "grpVideo";
             this.grpVideo.Size = new System.Drawing.Size(252, 129);
             this.grpVideo.TabIndex = 11;
@@ -263,16 +257,22 @@
             this.txtVideoChipset.Size = new System.Drawing.Size(100, 23);
             this.txtVideoChipset.TabIndex = 3;
             // 
+            // txtVideoMemoria
+            // 
+            this.txtVideoMemoria.Location = new System.Drawing.Point(129, 65);
+            this.txtVideoMemoria.Name = "txtVideoMemoria";
+            this.txtVideoMemoria.Size = new System.Drawing.Size(100, 23);
+            this.txtVideoMemoria.TabIndex = 4;
+            // 
             // grpNotebook
             // 
-            this.grpNotebook.Controls.Add(this.grpMemoriaRam);
             this.grpNotebook.Controls.Add(this.label16);
             this.grpNotebook.Controls.Add(this.label17);
             this.grpNotebook.Controls.Add(this.label18);
             this.grpNotebook.Controls.Add(this.txtNotebookProcesador);
             this.grpNotebook.Controls.Add(this.txtNotebookAlmacenamiento);
             this.grpNotebook.Controls.Add(this.txtNotebookRam);
-            this.grpNotebook.Location = new System.Drawing.Point(0, 0);
+            this.grpNotebook.Location = new System.Drawing.Point(563, 214);
             this.grpNotebook.Name = "grpNotebook";
             this.grpNotebook.Size = new System.Drawing.Size(252, 129);
             this.grpNotebook.TabIndex = 10;
@@ -331,13 +331,6 @@
             this.txtNotebookRam.Size = new System.Drawing.Size(100, 23);
             this.txtNotebookRam.TabIndex = 0;
             // 
-            // txtVideoMemoria
-            // 
-            this.txtVideoMemoria.Location = new System.Drawing.Point(129, 65);
-            this.txtVideoMemoria.Name = "txtVideoMemoria";
-            this.txtVideoMemoria.Size = new System.Drawing.Size(100, 23);
-            this.txtVideoMemoria.TabIndex = 4;
-            // 
             // txtProcesadorSocket
             // 
             this.txtProcesadorSocket.Location = new System.Drawing.Point(129, 86);
@@ -361,7 +354,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(303, 258);
+            this.btnSalir.Location = new System.Drawing.Point(167, 277);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 12;
@@ -371,7 +364,7 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(188, 258);
+            this.btnCrear.Location = new System.Drawing.Point(57, 279);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 13;
@@ -388,7 +381,7 @@
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Location = new System.Drawing.Point(503, 3);
+            this.btnMinimizar.Location = new System.Drawing.Point(771, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
             this.btnMinimizar.TabIndex = 24;
@@ -404,7 +397,7 @@
             this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Location = new System.Drawing.Point(534, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(802, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 25);
             this.btnCerrar.TabIndex = 23;
@@ -477,7 +470,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(563, 28);
+            this.pictureBox1.Size = new System.Drawing.Size(827, 28);
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
@@ -534,11 +527,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 307);
+            this.ClientSize = new System.Drawing.Size(827, 355);
+            this.Controls.Add(this.grpMemoriaRam);
             this.Controls.Add(this.grpVideo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.grpProcesador);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.grpNotebook);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);

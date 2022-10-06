@@ -26,3 +26,4 @@ C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-w
 C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-windows\FrmParcial.FrmCrearProducto.resources
 C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-windows\FrmParcial.FrmEditarProducto.resources
 C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-windows\FrmParcial.FrmFacturaDeVenta.resources
+C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-windows\FrmParcial.FrmEstadistica.resources

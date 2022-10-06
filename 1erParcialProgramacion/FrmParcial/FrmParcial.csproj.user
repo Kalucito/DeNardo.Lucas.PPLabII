@@ -7,6 +7,9 @@
     <Compile Update="FrmEditarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmEstadistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmFacturaDeVenta.cs">
       <SubType>Form</SubType>
     </Compile>

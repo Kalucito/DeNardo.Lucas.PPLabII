@@ -47,6 +47,7 @@
             this.tmrContadorTiempo = new System.Windows.Forms.Timer(this.components);
             this.picInicioDueño = new System.Windows.Forms.PictureBox();
             this.chkAnimaciones = new System.Windows.Forms.CheckBox();
+            this.btnContador = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -254,7 +255,7 @@
             // picInicioDueño
             // 
             this.picInicioDueño.Image = global::FrmParcial.Properties.Resources.gifIngresoDueño;
-            this.picInicioDueño.Location = new System.Drawing.Point(250, 25);
+            this.picInicioDueño.Location = new System.Drawing.Point(250, 22);
             this.picInicioDueño.Name = "picInicioDueño";
             this.picInicioDueño.Size = new System.Drawing.Size(530, 305);
             this.picInicioDueño.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -274,6 +275,23 @@
             this.chkAnimaciones.TabIndex = 9;
             this.chkAnimaciones.Text = "Desactivar Animaciones";
             this.chkAnimaciones.UseVisualStyleBackColor = true;
+            // 
+            // btnContador
+            // 
+            this.btnContador.BackColor = System.Drawing.Color.DarkRed;
+            this.btnContador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnContador.FlatAppearance.BorderSize = 0;
+            this.btnContador.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnContador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.btnContador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContador.ForeColor = System.Drawing.Color.White;
+            this.btnContador.Location = new System.Drawing.Point(423, 291);
+            this.btnContador.Name = "btnContador";
+            this.btnContador.Size = new System.Drawing.Size(157, 33);
+            this.btnContador.TabIndex = 19;
+            this.btnContador.Text = "Autocompletar Contador";
+            this.btnContador.UseVisualStyleBackColor = false;
+            this.btnContador.Click += new System.EventHandler(this.btnContador_Click);
             // 
             // FrmLogin
             // 
@@ -297,6 +315,7 @@
             this.Controls.Add(this.btnAutocompletarVendedor);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.chkAnimaciones);
+            this.Controls.Add(this.btnContador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.Opacity = 0.95D;
@@ -331,5 +350,6 @@
         private System.Windows.Forms.Timer tmrContadorTiempo;
         private PictureBox picInicioDueño;
         private CheckBox chkAnimaciones;
+        private Button btnContador;
     }
 }

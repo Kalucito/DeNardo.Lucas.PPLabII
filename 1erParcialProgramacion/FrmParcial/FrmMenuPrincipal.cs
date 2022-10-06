@@ -29,7 +29,7 @@ namespace FrmParcial
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            FrmInventario frmInventario = new FrmInventario();
+            FrmInventario frmInventario = new FrmInventario(usuario);
             frmInventario.Show();
             this.Hide();
         }

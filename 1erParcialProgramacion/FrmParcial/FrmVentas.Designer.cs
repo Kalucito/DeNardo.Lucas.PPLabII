@@ -49,6 +49,7 @@
             this.picHierro = new System.Windows.Forms.PictureBox();
             this.picChallenger = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHierro)).BeginInit();
@@ -271,12 +272,23 @@
             this.btnVolver.Visible = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Location = new System.Drawing.Point(12, 75);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(53, 23);
+            this.btnLogOut.TabIndex = 28;
+            this.btnLogOut.Text = "logout";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(3)))), ((int)(((byte)(3)))));
             this.ClientSize = new System.Drawing.Size(604, 424);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.picChallenger);
             this.Controls.Add(this.picHierro);
@@ -329,5 +341,6 @@
         private PictureBox picHierro;
         private PictureBox picChallenger;
         private Button btnVolver;
+        private Button btnLogOut;
     }
 }

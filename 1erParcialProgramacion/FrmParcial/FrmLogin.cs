@@ -27,6 +27,13 @@ namespace FrmParcial
 
                 if (aux != null)
                 {
+                    if(aux.TipoDeUsuario == Usuario.eTipoDeUsuario.Contador)
+                    {
+                        FrmEstadistica frmEstadistica = new FrmEstadistica();
+                        frmEstadistica.Show();
+                        this.Hide();
+                    }
+
                     if (aux.TipoDeUsuario == Usuario.eTipoDeUsuario.Dueño)
                     {
                         if (chkAnimaciones.Checked)
@@ -175,6 +182,14 @@ namespace FrmParcial
             my = e.Y;
         }
 
+        private void btnContador_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "contador@contador.com";
+            txtContraseña.Text = "contraseña";
+            txtEmail.ForeColor = Color.LightGray;
+            txtContraseña.ForeColor = Color.LightGray;
+            txtContraseña.UseSystemPasswordChar = true;
+        }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {

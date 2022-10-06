@@ -117,6 +117,13 @@ namespace FrmParcial
             frmMenuPrincipal.Show();
         }
 
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.Show();
+            this.Hide();
+        }
+
         private void btnVender_Click(object sender, EventArgs e)
         {
             DialogResult confirmarVenta;
@@ -134,11 +141,14 @@ namespace FrmParcial
                         if (confirmarVenta == DialogResult.Yes)
                         {
                             FrmFacturaDeVenta frmFacturaDeVenta = new FrmFacturaDeVenta(auxCliente, productoSeleccioando, usuario);
+                            Venta venta = new Venta(productoSeleccioando);
 
                             if (auxCliente.MetodoDePago == Cliente.eMetodoPago.TarjetaDeCredito)
                             {
                                 auxCliente.Dinero = auxCliente.Dinero - (productoSeleccioando.Precio*1.10);
                                 frmFacturaDeVenta.ShowDialog();
+                                Negocio.CargarVenta(venta);
+                                
                             }
                             else
                             {
@@ -150,6 +160,7 @@ namespace FrmParcial
                             dgvProductos.Rows.Clear();
                             CargarDataGridView(Negocio.RetornarProductos());
                             frmFacturaDeVenta.ShowDialog();
+                            Negocio.CargarVenta(venta);
 
                         }
                     }
