@@ -15,7 +15,7 @@ namespace BibliotecaDeClases
         #endregion
         
         #region Constructores
-        public PlacaDeVideo(string modelo, string tipoDeProducto, string marcaProducto, float precio, List<eColores> colores, string chipset, int capacidadDeMemoria, int consumoDeEnergia) : base(modelo, tipoDeProducto, marcaProducto, precio, colores)
+        public PlacaDeVideo(string tipoDeProducto, string marcaProducto, string modelo, double precio, string categoria, int stock, string chipset, int capacidadDeMemoria, int consumoDeEnergia) : base(tipoDeProducto, marcaProducto, modelo, precio, categoria, stock)
         {
             this.chipset = chipset;
             this.capacidadDeMemorioa = capacidadDeMemoria;

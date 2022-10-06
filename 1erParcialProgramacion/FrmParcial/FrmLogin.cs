@@ -9,7 +9,8 @@ namespace FrmParcial
     {
         public int m, mx, my; //Variables para mover la ventana sin bordes.
         public int contadorDeTiempo = 0; //Variable para mostrar gif de inicio de sesión.
-        SoundPlayer repodudctorSonido = new SoundPlayer();
+        public int duracionGif;
+        SoundPlayer reproductorSonido = new SoundPlayer();
 
         public FrmLogin()
         {
@@ -28,19 +29,36 @@ namespace FrmParcial
                 {
                     if (aux.TipoDeUsuario == Usuario.eTipoDeUsuario.Dueño)
                     {
-                        picInicioDueño.Visible = true;
-                        tmrContadorTiempoDueño.Start();
-                        repodudctorSonido.Stream = Properties.Resources.SonidoChallenger;
-                        repodudctorSonido.Play();
+                        if (chkAnimaciones.Checked)
+                        {
+                            FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal();//desactivar == false
+                            this.Hide();
+                            menuPrincipal.Show();
+                        }
+                        else
+                        {
+                            duracionGif = 84;
+                            picInicioDueño.Visible = true;
+                            tmrContadorTiempo.Start();
+                            reproductorSonido.Stream = Properties.Resources.SonidoChallenger;
+                            reproductorSonido.Play();
+                        }
                     }
                     else
                     {
-                        picInicioVendedor.Visible = true;
-                        tmrContadorTiempoVendedor.Start();
-                        repodudctorSonido.Stream = Properties.Resources.SonidoHierro;
-                        repodudctorSonido.Play();
+                        if (chkAnimaciones.Checked)
+                        {
+                            this.Hide();
+                        }
+                        else
+                        {
+                            duracionGif = 44;
+                            picInicioVendedor.Visible = true;
+                            tmrContadorTiempo.Start();
+                            reproductorSonido.Stream = Properties.Resources.SonidoHierro;
+                            reproductorSonido.Play();
+                        }
                     }
-
                 }
                 else
                 {
@@ -56,22 +74,20 @@ namespace FrmParcial
         {
             contadorDeTiempo += 1;
 
-            if (contadorDeTiempo == 44)
+            if (contadorDeTiempo == duracionGif && duracionGif == 44)
             {
-                tmrContadorTiempoVendedor.Stop();
+                tmrContadorTiempo.Stop();
                 this.Hide();
+                picInicioVendedor.Visible = false;
             }
-        }
-        private void tmrContadorTiempoDueño_Tick(object sender, EventArgs e)
-        {
-            contadorDeTiempo += 1;
 
-            if (contadorDeTiempo == 84)
+            if (contadorDeTiempo == duracionGif && duracionGif == 84)
             {
-                tmrContadorTiempoDueño.Stop();
+                tmrContadorTiempo.Stop();
                 FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal();
                 this.Hide();
                 menuPrincipal.Show();
+                picInicioDueño.Visible = false;
             }
         }
 
@@ -119,7 +135,7 @@ namespace FrmParcial
 
         #region Funciones MinimizarCerrar
 
-        private void btnMinimizar_Click(object sender, EventArgs e)
+        protected void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
@@ -148,8 +164,6 @@ namespace FrmParcial
             txtContraseña.UseSystemPasswordChar = true;
         }
         #endregion
-
-
 
         #region Logica Mover Ventana
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)

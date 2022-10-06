@@ -44,9 +44,9 @@
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.lblErrorIngreso = new System.Windows.Forms.Label();
             this.picInicioVendedor = new System.Windows.Forms.PictureBox();
-            this.tmrContadorTiempoVendedor = new System.Windows.Forms.Timer(this.components);
-            this.tmrContadorTiempoDueño = new System.Windows.Forms.Timer(this.components);
+            this.tmrContadorTiempo = new System.Windows.Forms.Timer(this.components);
             this.picInicioDueño = new System.Windows.Forms.PictureBox();
+            this.chkAnimaciones = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -247,13 +247,9 @@
             this.picInicioVendedor.TabStop = false;
             this.picInicioVendedor.Visible = false;
             // 
-            // tmrContadorTiempoVendedor
+            // tmrContadorTiempo
             // 
-            this.tmrContadorTiempoVendedor.Tick += new System.EventHandler(this.tmrContadorTiempo_Tick);
-            // 
-            // tmrContadorTiempoDueño
-            // 
-            this.tmrContadorTiempoDueño.Tick += new System.EventHandler(this.tmrContadorTiempoDueño_Tick);
+            this.tmrContadorTiempo.Tick += new System.EventHandler(this.tmrContadorTiempo_Tick);
             // 
             // picInicioDueño
             // 
@@ -266,14 +262,27 @@
             this.picInicioDueño.TabStop = false;
             this.picInicioDueño.Visible = false;
             // 
+            // chkAnimaciones
+            // 
+            this.chkAnimaciones.AutoSize = true;
+            this.chkAnimaciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.chkAnimaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkAnimaciones.ForeColor = System.Drawing.Color.Transparent;
+            this.chkAnimaciones.Location = new System.Drawing.Point(625, 300);
+            this.chkAnimaciones.Name = "chkAnimaciones";
+            this.chkAnimaciones.Size = new System.Drawing.Size(149, 19);
+            this.chkAnimaciones.TabIndex = 9;
+            this.chkAnimaciones.Text = "Desactivar Animaciones";
+            this.chkAnimaciones.UseVisualStyleBackColor = true;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(780, 330);
-            this.Controls.Add(this.picInicioDueño);
             this.Controls.Add(this.picInicioVendedor);
+            this.Controls.Add(this.picInicioDueño);
             this.Controls.Add(this.lblErrorIngreso);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
@@ -287,6 +296,7 @@
             this.Controls.Add(this.btnAutocompletarDueño);
             this.Controls.Add(this.btnAutocompletarVendedor);
             this.Controls.Add(this.btnIngresar);
+            this.Controls.Add(this.chkAnimaciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.Opacity = 0.95D;
@@ -318,8 +328,8 @@
         private Button btnMinimizar;
         private Label lblErrorIngreso;
         private PictureBox picInicioVendedor;
-        private System.Windows.Forms.Timer tmrContadorTiempoVendedor;
-        private System.Windows.Forms.Timer tmrContadorTiempoDueño;
+        private System.Windows.Forms.Timer tmrContadorTiempo;
         private PictureBox picInicioDueño;
+        private CheckBox chkAnimaciones;
     }
 }

@@ -20,3 +20,5 @@ C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-w
 C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-windows\FrmParcial.pdb
 C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-windows\FrmParcial.genruntimeconfig.cache
 C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-windows\ref\FrmParcial.dll
+C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-windows\FrmParcial.FrmInventario.resources
+C:\Users\Lucas\source\repos\1erParcialProgramacion\FrmParcial\obj\Debug\net6.0-windows\FrmParcial.FrmVentas.resources

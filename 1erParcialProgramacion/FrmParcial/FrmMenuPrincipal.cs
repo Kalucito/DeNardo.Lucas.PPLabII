@@ -16,5 +16,19 @@ namespace FrmParcial
         {
             InitializeComponent();
         }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            FrmInventario frmInventario = new FrmInventario();
+            frmInventario.Show();
+            this.Hide();
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            FrmVentas frmVentas = new FrmVentas();
+            frmVentas.Show();
+            this.Hide();
+        }
     }
 }

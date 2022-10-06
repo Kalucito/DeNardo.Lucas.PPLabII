@@ -13,22 +13,51 @@ namespace BibliotecaDeClases
         protected string tipoDeProducto;
         protected string marcaProducto;
         protected string modelo;
-        protected float precio;
-        protected List <eColores> colores;
+        protected double precio;
+        protected string categoria;
+        protected int stock;
         #endregion
 
         #region Constructores
 
-        protected Producto(string modelo, string tipoDeProducto, string marcaProducto, float precio, List<eColores> colores) 
+        protected Producto(string tipoDeProducto, string marcaProducto, string modelo, double precio, string categoria, int stock) 
         {
             this.tipoDeProducto = tipoDeProducto;
             this.marcaProducto = marcaProducto;
             this.modelo = modelo;
             this.precio = precio;
-            this.colores = colores;
+            this.categoria = categoria;
+            this.stock = stock;
         }
 
         #endregion
+
+        public string TipoDeProducto
+        {
+            get { return this.tipoDeProducto;}
+        }
+        public string MarcaDeProducto
+        {
+            get { return this.marcaProducto;}
+        }
+        public string Modelo
+        {
+            get { return this.modelo;}
+        }
+        public double Precio
+        {
+            get { return this.precio;}
+        }
+        public string Categoria
+        {
+            get { return this.categoria;}
+        }
+        public int Stock
+        {
+            get { return this.stock;}
+        }
+
+
 
         #region Enumerados
         public enum eColores

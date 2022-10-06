@@ -15,7 +15,7 @@ namespace BibliotecaDeClases
         #endregion
 
         #region Contructores
-        public Notebook(string modelo, string tipoDeProducto, string marcaProducto, float precio, List<eColores> colores, int memoriaRam, int almacenamiento, string procesador) : base (modelo, tipoDeProducto, marcaProducto, precio, colores)
+        public Notebook(string tipoDeProducto, string marcaProducto, string modelo, double precio, string categoria, int stock, int memoriaRam, int almacenamiento, string procesador) : base (tipoDeProducto, marcaProducto, modelo, precio, categoria, stock)
         {
             this.memoriaRam = memoriaRam;
             this.almacenamiento = almacenamiento;

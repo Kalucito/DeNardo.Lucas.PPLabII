@@ -16,7 +16,7 @@ namespace BibliotecaDeClases
         #endregion
 
         #region Constructores
-        public MemoriaRam(string modelo, string tipoDeProducto, string marcaProducto, float precio, List<eColores> colores, int cantidadDeMemoria, string tecnologia, int velocidad) : base(modelo, tipoDeProducto, marcaProducto, precio, colores)
+        public MemoriaRam(string tipoDeProducto, string marcaProducto, string modelo, double precio, string categoria, int stock, int cantidadDeMemoria, string tecnologia, int velocidad) : base(tipoDeProducto, marcaProducto, modelo, precio, categoria, stock)
         {
             this.cantidadDeMemoria = cantidadDeMemoria;
             this.tecnologia = tecnologia;
